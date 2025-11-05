@@ -40,7 +40,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* 3D Background */}
       <div className="absolute inset-0 z-0">
         <Canvas camera={{ position: [0, 0, 1] }}>
@@ -110,19 +110,27 @@ export default function Hero() {
             >
               <a href="/resume.pdf" download>
                 <Download className="mr-2 h-5 w-5" />
-                Download Resume
+                Download CV
               </a>
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-2 border-secondary hover:bg-secondary/10 text-foreground font-semibold px-8 py-6 text-lg rounded-xl transition-all duration-300 hover:scale-105"
+              className="border-2 border-primary hover:bg-primary/10 text-foreground font-semibold px-8 py-6 text-lg rounded-xl transition-all duration-300 hover:scale-105"
               asChild
             >
               <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                 <Eye className="mr-2 h-5 w-5" />
-                View Resume
+                View CV
               </a>
+            </Button>
+            <Button
+              size="lg"
+              variant="secondary"
+              className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-secondary/50 transition-all duration-300 hover:scale-105"
+              onClick={() => scrollToSection('contact')}
+            >
+              Contact
             </Button>
           </motion.div>
         </motion.div>

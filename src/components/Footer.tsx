@@ -38,9 +38,6 @@ export default function Footer() {
           {/* Copyright */}
           <div className="flex flex-col items-center gap-2 text-muted-foreground text-sm">
             <div className="flex items-center gap-2">
-              <span>© 2025 Rafiudeen Asjath Ahamed. All rights reserved</span>
-            </div>
-            <div className="flex items-center gap-2">
               <span className="flex items-center gap-1">
                 Built & Managed by{' '}
                 <a 
@@ -52,6 +49,9 @@ export default function Footer() {
                   Aasifvip — Aasifvip.dev
                 </a>
               </span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span>© 2025 Rafiudeen Asjath Ahamed. All rights reserved</span>
             </div>
           </div>
 
