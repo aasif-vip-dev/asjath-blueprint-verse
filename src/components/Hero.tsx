@@ -3,7 +3,8 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Download, Mail } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Download, Eye } from 'lucide-react';
 import * as random from 'maath/random/dist/maath-random.esm';
 
 function Stars(props: any) {
@@ -58,6 +59,21 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="space-y-6"
         >
+          {/* Profile Avatar */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            className="flex justify-center mb-6"
+          >
+            <Avatar className="h-32 w-32 border-4 border-primary/30 shadow-lg ring-4 ring-primary/10">
+              <AvatarImage src="/profile.jpg" alt="Rafiudeen Asjath Ahamed" />
+              <AvatarFallback className="bg-gradient-to-br from-primary to-secondary text-primary-foreground text-4xl font-display">
+                RA
+              </AvatarFallback>
+            </Avatar>
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -90,10 +106,12 @@ export default function Hero() {
             <Button
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105"
-              onClick={() => scrollToSection('contact')}
+              asChild
             >
-              <Mail className="mr-2 h-5 w-5" />
-              Hire Me
+              <a href="/resume.pdf" download>
+                <Download className="mr-2 h-5 w-5" />
+                Download Resume
+              </a>
             </Button>
             <Button
               size="lg"
@@ -101,8 +119,8 @@ export default function Hero() {
               className="border-2 border-secondary hover:bg-secondary/10 text-foreground font-semibold px-8 py-6 text-lg rounded-xl transition-all duration-300 hover:scale-105"
               asChild
             >
-              <a href="/resume.pdf" download>
-                <Download className="mr-2 h-5 w-5" />
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                <Eye className="mr-2 h-5 w-5" />
                 View Resume
               </a>
             </Button>

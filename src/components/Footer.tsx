@@ -36,12 +36,23 @@ export default function Footer() {
           <div className="w-24 h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
 
           {/* Copyright */}
-          <div className="flex items-center gap-2 text-muted-foreground text-sm">
-            <span>© 2025 All rights reserved</span>
-            <span>•</span>
-            <span className="flex items-center gap-1">
-              Made with <Heart className="h-3 w-3 text-primary animate-pulse" /> in Dubai
-            </span>
+          <div className="flex flex-col items-center gap-2 text-muted-foreground text-sm">
+            <div className="flex items-center gap-2">
+              <span>© 2025 Rafiudeen Asjath Ahamed. All rights reserved</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="flex items-center gap-1">
+                Built & Managed by{' '}
+                <a 
+                  href="https://aasifvip.dev" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-primary/80 transition-colors duration-300 font-semibold inline-flex items-center gap-1"
+                >
+                  Aasifvip — Aasifvip.dev
+                </a>
+              </span>
+            </div>
           </div>
 
           {/* Particles Animation */}
