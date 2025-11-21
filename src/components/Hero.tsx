@@ -134,18 +134,6 @@ export default function Hero() {
             </Button>
           </motion.div>
         </motion.div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
-        >
-          <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex items-start justify-center p-2">
-            <div className="w-1.5 h-2 bg-primary rounded-full animate-pulse" />
-          </div>
-        </motion.div>
       </div>
     </section>
   );
