@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { Heart } from 'lucide-react';
+import { Heart, Linkedin, Instagram, Mail } from 'lucide-react';
+import { SiTiktok } from 'react-icons/si';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -31,6 +32,40 @@ export default function Footer() {
           <p className="text-muted-foreground text-sm">
             Quantity Surveyor | Cost Control Specialist
           </p>
+
+          {/* Social Media Icons */}
+          <div className="flex items-center gap-4 my-4">
+            <a
+              href="https://www.linkedin.com/in/rafiudeen-asjath-ahamed"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/50"
+            >
+              <Linkedin className="h-5 w-5" />
+            </a>
+            <a
+              href="https://www.tiktok.com/@your-profile"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/50"
+            >
+              <SiTiktok className="h-5 w-5" />
+            </a>
+            <a
+              href="https://www.instagram.com/your-profile"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/50"
+            >
+              <Instagram className="h-5 w-5" />
+            </a>
+            <a
+              href="mailto:your-email@example.com"
+              className="p-3 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/50"
+            >
+              <Mail className="h-5 w-5" />
+            </a>
+          </div>
 
           {/* Divider */}
           <div className="w-24 h-px bg-gradient-to-r from-transparent via-primary to-transparent" />

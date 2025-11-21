@@ -40,7 +40,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32">
       {/* 3D Background */}
       <div className="absolute inset-0 z-0">
         <Canvas camera={{ position: [0, 0, 1] }}>
@@ -83,7 +83,7 @@ export default function Hero() {
             <span className="text-primary text-sm font-medium">Professional Quantity Surveyor</span>
           </motion.div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight">
             <span className="block text-gradient glow-text animate-float">
               Rafiudeen Asjath Ahamed
             </span>
