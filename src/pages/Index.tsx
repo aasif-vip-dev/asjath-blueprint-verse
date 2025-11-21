@@ -8,6 +8,7 @@ import Skills from '@/components/Skills';
 import Portfolio from '@/components/Portfolio';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import BackToTop from '@/components/BackToTop';
 
 const Index = () => {
   useEffect(() => {
@@ -32,6 +33,7 @@ const Index = () => {
         <Contact />
       </main>
       <Footer />
+      <BackToTop />
     </div>
   );
 };
