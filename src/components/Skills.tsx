@@ -21,32 +21,32 @@ const skillCategories = [
     title: 'Professional Skills',
     color: 'from-primary to-yellow-500',
     skills: [
-      { name: 'Quantity Take-off', icon: Calculator },
-      { name: 'BOQ Preparation', icon: FileText },
-      { name: 'Cost Estimation', icon: DollarSign },
-      { name: 'Cost Control', icon: TrendingUp },
-      { name: 'Contract Administration', icon: FileCheck },
-      { name: 'Progress Monitoring', icon: ClipboardList },
+      { name: 'Quantity Take-off', icon: Calculator, level: 95 },
+      { name: 'BOQ Preparation', icon: FileText, level: 98 },
+      { name: 'Cost Estimation', icon: DollarSign, level: 92 },
+      { name: 'Cost Control', icon: TrendingUp, level: 90 },
+      { name: 'Contract Administration', icon: FileCheck, level: 88 },
+      { name: 'Progress Monitoring', icon: ClipboardList, level: 85 },
     ],
   },
   {
     title: 'Software Expertise',
     color: 'from-secondary to-teal-500',
     skills: [
-      { name: 'PlanSwift', icon: Layout },
-      { name: 'AutoCAD', icon: PenTool },
-      { name: 'CostX', icon: Layers },
-      { name: 'Microsoft Office', icon: Package },
+      { name: 'PlanSwift', icon: Layout, level: 95 },
+      { name: 'AutoCAD', icon: PenTool, level: 90 },
+      { name: 'CostX', icon: Layers, level: 88 },
+      { name: 'Microsoft Office', icon: Package, level: 98 },
     ],
   },
   {
     title: 'Technical Skills',
     color: 'from-accent to-blue-500',
     skills: [
-      { name: 'Rate Analysis', icon: Calculator },
-      { name: 'IPA Preparation', icon: FileText },
-      { name: 'Site Measurement', icon: Ruler },
-      { name: 'Material Management', icon: Hammer },
+      { name: 'Rate Analysis', icon: Calculator, level: 92 },
+      { name: 'IPA Preparation', icon: FileText, level: 90 },
+      { name: 'Site Measurement', icon: Ruler, level: 88 },
+      { name: 'Material Management', icon: Hammer, level: 85 },
     ],
   },
 ];
@@ -95,26 +95,45 @@ export default function Skills() {
                   </div>
                 </div>
 
-                {/* Skills Grid */}
-                <div className="grid grid-cols-2 gap-4">
+                {/* Skills List with Progress Bars */}
+                <div className="space-y-6">
                   {category.skills.map((skill, skillIndex) => (
                     <motion.div
                       key={skillIndex}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                      initial={{ opacity: 0, x: -50 }}
+                      animate={isInView ? { opacity: 1, x: 0 } : {}}
                       transition={{
-                        duration: 0.4,
-                        delay: catIndex * 0.2 + skillIndex * 0.05,
+                        duration: 0.5,
+                        delay: catIndex * 0.2 + skillIndex * 0.1,
                       }}
-                      className="group/skill relative"
+                      className="group/skill"
                     >
-                      <div className={`absolute inset-0 bg-gradient-to-br ${category.color} rounded-xl opacity-0 group-hover/skill:opacity-20 blur-md transition-all duration-300`} />
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-2">
+                          <skill.icon className="h-4 w-4 text-primary" />
+                          <span className="text-sm font-medium text-foreground">
+                            {skill.name}
+                          </span>
+                        </div>
+                        <span className="text-xs font-semibold text-primary">
+                          {skill.level}%
+                        </span>
+                      </div>
                       
-                      <div className="relative bg-background/50 backdrop-blur-sm border border-border/30 rounded-xl p-4 hover:border-primary/50 transition-all duration-300 cursor-pointer transform hover:scale-105">
-                        <skill.icon className="h-6 w-6 text-primary mb-2" />
-                        <p className="text-sm font-medium text-foreground/90 leading-tight">
-                          {skill.name}
-                        </p>
+                      {/* Progress Bar */}
+                      <div className="relative h-2 bg-background/50 rounded-full overflow-hidden border border-border/30">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
+                          transition={{
+                            duration: 1.5,
+                            delay: catIndex * 0.2 + skillIndex * 0.1,
+                            ease: "easeOut"
+                          }}
+                          className={`h-full bg-gradient-to-r ${category.color} relative`}
+                        >
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer" />
+                        </motion.div>
                       </div>
                     </motion.div>
                   ))}
