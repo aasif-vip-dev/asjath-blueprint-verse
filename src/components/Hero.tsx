@@ -88,9 +88,9 @@ export default function Hero() {
               Rafiudeen Asjath Ahamed
             </span>
           </h1>
-
+          
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            BSc (Hons) in Quantity Surveying & Construction
+            BSc (Hons)<sup>R</sup> in Quantity Surveying & Construction
           </p>
 
           <p className="text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">
