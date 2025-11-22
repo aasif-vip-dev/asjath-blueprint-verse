@@ -6,13 +6,15 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
+
 
 const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'asjath.qty@gmail.com',
-    link: 'mailto:asjath.qty@gmail.com',
+    value: 'asjathahamadd@gmail.com',
+    link: 'mailto:asjathahamadd@gmail.com',
     color: 'from-primary to-yellow-500',
   },
   {
@@ -26,7 +28,7 @@ const contactInfo = [
     icon: Linkedin,
     label: 'LinkedIn',
     value: 'Connect on LinkedIn',
-    link: 'https://linkedin.com/in/asjath-ahamed',
+    link: 'https://linkedin.com/in/asjathahamedd',
     color: 'from-accent to-blue-500',
   },
 ];
@@ -42,6 +44,43 @@ export default function Contact() {
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef();
+
+
+  const sendMail = (e: React.FormEvent) => {
+    
+    e.preventDefault();
+console.log(formRef.current);
+    emailjs
+      .sendForm(
+        "service_5i1rmzu",
+        "template_0og2gqp",
+        formRef.current,
+        "X1CYcQNW5Mz8HxVl3"
+  
+      )
+      .then(
+        (result) => {
+          toast({
+            title: "✅ Message sent successfully!",
+            description: "Thank you for reaching out. I'll get back to you soon.",
+          });
+          setFormData({ name: "", email: "", message: "" });
+          console.log(result.text);
+          console.log(formRef.current);
+        },
+        (error) => {
+            toast({
+            title: "❌ Failed to send message.",
+            description: "Please try again later.",
+          });
+          setFormData({ name: "", email: "", message: "" });
+          console.log(error.text);
+        }
+      );
+
+  }
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -154,7 +193,8 @@ export default function Contact() {
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl blur-2xl" />
             
             <form
-              onSubmit={handleSubmit}
+              ref={formRef}
+              onSubmit={sendMail}
               className="relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 md:p-8 space-y-6"
             >
               <div className="space-y-4">
@@ -164,11 +204,12 @@ export default function Contact() {
                   </label>
                   <Input
                     id="name"
-                    name="name"
+                    name="from_name"
                     type="text"
                     placeholder="John Doe"
                     value={formData.name}
-                    onChange={handleChange}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })}
                     required
                     className="bg-background/50 border-border/50 focus:border-primary transition-colors"
                   />
@@ -180,11 +221,12 @@ export default function Contact() {
                   </label>
                   <Input
                     id="email"
-                    name="email"
                     type="email"
+                    name="from_email"
                     placeholder="john@example.com"
                     value={formData.email}
-                    onChange={handleChange}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })}
                     required
                     className="bg-background/50 border-border/50 focus:border-primary transition-colors"
                   />
@@ -199,7 +241,8 @@ export default function Contact() {
                     name="message"
                     placeholder="Tell me about your project..."
                     value={formData.message}
-                    onChange={handleChange}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })}
                     required
                     rows={6}
                     className="bg-background/50 border-border/50 focus:border-primary transition-colors resize-none"

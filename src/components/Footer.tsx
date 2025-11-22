@@ -36,7 +36,7 @@ export default function Footer() {
           {/* Social Media Icons */}
           <div className="flex items-center gap-4 my-4">
             <a
-              href="https://www.linkedin.com/in/rafiudeen-asjath-ahamed"
+              href="https://www.linkedin.com/in/asjathahamedd"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/50"
@@ -60,7 +60,7 @@ export default function Footer() {
               <Instagram className="h-5 w-5" />
             </a>
             <a
-              href="mailto:your-email@example.com"
+              href="mailto:asjathahamadd@gmail.com"
               className="p-3 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/50"
             >
               <Mail className="h-5 w-5" />
@@ -72,22 +72,23 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="flex flex-col items-center gap-2 text-muted-foreground text-sm">
+          <div className="flex items-center gap-2">
+              <span>© 2025 Rafiudeen Asjath Ahamed. All rights reserved</span>
+            </div>
             <div className="flex items-center gap-2">
               <span className="flex items-center gap-1">
                 Built & Managed by{' '}
                 <a 
-                  href="https://aasifvip.dev" 
+                  href="https://aasifvip.info" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-primary hover:text-primary/80 transition-colors duration-300 font-semibold inline-flex items-center gap-1"
                 >
-                  Aasifvip — Aasifvip.dev
+                  Aasifvip — Aasifvip.info
                 </a>
               </span>
             </div>
-            <div className="flex items-center gap-2">
-              <span>© 2025 Rafiudeen Asjath Ahamed. All rights reserved</span>
-            </div>
+            
           </div>
 
           {/* Particles Animation */}

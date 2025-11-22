@@ -8,7 +8,7 @@ const experiences = [
     company: 'Competent Engineering Construction LLC',
     location: 'Dubai, UAE',
     position: 'Quantity Surveyor',
-    period: 'July 2022 – Present',
+    period: 'July 2022 – Sep 2025',
     responsibilities: [
       'Prepared comprehensive quantity take-offs and BOQs using PlanSwift and AutoCAD for various project types',
       'Conducted rate analysis and cost estimation to support tender submissions and budget planning',

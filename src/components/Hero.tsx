@@ -67,7 +67,7 @@ export default function Hero() {
             className="flex justify-center mb-6"
           >
             <Avatar className="h-32 w-32 border-4 border-primary/30 shadow-lg ring-4 ring-primary/10">
-              <AvatarImage src="/profile.jpg" alt="Rafiudeen Asjath Ahamed" />
+              <AvatarImage src="../profile.jpeg" alt="Rafiudeen Asjath Ahamed" />
               <AvatarFallback className="bg-gradient-to-br from-primary to-secondary text-primary-foreground text-4xl font-display">
                 RA
               </AvatarFallback>
@@ -108,7 +108,7 @@ export default function Hero() {
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105"
               asChild
             >
-              <a href="/resume.pdf" download>
+              <a href="/Asjath_Rafiudeen_CV.pdf" download>
                 <Download className="mr-2 h-5 w-5" />
                 Download CV
               </a>
@@ -119,7 +119,7 @@ export default function Hero() {
               className="border-2 border-primary hover:bg-primary/10 text-foreground font-semibold px-8 py-6 text-lg rounded-xl transition-all duration-300 hover:scale-105"
               asChild
             >
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="https://drive.google.com/file/d/1apMnT6cBtP_gSNkt3e-ph50gV4WcNZSp/view" target="_blank" rel="noopener noreferrer">
                 <Eye className="mr-2 h-5 w-5" />
                 View CV
               </a>

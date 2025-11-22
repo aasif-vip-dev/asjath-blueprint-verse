@@ -6,16 +6,16 @@ import { GraduationCap, Briefcase, Award } from 'lucide-react';
 const stats = [
   {
     icon: Briefcase,
-    value: '5+',
+    value: '3+',
     label: 'Years Experience',
     color: 'text-primary',
   },
-  {
-    icon: Award,
-    value: '100+',
-    label: 'Projects Completed',
-    color: 'text-secondary',
-  },
+  // {
+  //   icon: Award,
+  //   value: '100+',
+  //   label: 'Projects Completed',
+  //   color: 'text-secondary',
+  // },
   {
     icon: GraduationCap,
     value: '4',

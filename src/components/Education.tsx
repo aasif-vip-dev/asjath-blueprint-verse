@@ -92,7 +92,7 @@ export default function Education() {
                   </p>
                   <div className="flex items-center justify-between text-sm text-muted-foreground">
                     <span>{edu.location}</span>
-                    <span className="px-3 py-1 bg-muted/50 rounded-full">{edu.year}</span>
+                    {/* <span className="px-3 py-1 bg-muted/50 rounded-full">{edu.year}</span> */}
                   </div>
                 </div>
 
